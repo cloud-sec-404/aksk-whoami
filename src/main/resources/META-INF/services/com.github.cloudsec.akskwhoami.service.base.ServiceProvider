@@ -1,0 +1,2 @@
+com.github.cloudsec.akskwhoami.service.impl.FooServiceProvider
+com.github.cloudsec.akskwhoami.service.impl.alicloud.AliCloudServiceProvider
