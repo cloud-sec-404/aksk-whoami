@@ -51,7 +51,15 @@ public class TestTask {
     /**
      * @return
      */
-    public boolean hasAkSk() {
+    public boolean notHasAkAndSk() {
+        return !this.hasAkAndSk();
+    }
+
+
+    /**
+     * @return
+     */
+    public boolean hasAkAndSk() {
         return this.hasAk() && this.hasSk();
     }
 

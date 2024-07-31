@@ -1,7 +1,10 @@
 package com.github.cloudsec.akskwhoami.service.base;
 
+import com.github.cloudsec.akskwhoami.service.domain.NetworkMode;
 import com.github.cloudsec.akskwhoami.service.domain.TestResult;
 import com.github.cloudsec.akskwhoami.service.domain.TestTask;
+
+import java.util.List;
 
 /**
  * 用于表示一个服务提供商，服务提供商提供aksk识别测试的能力
@@ -39,6 +42,13 @@ public interface ServiceProvider {
      * @return
      */
     String getProductUrl();
+
+    /**
+     * 获取支持的网络模式都有哪些
+     *
+     * @return
+     */
+    List<NetworkMode> getSupportNetworkModeList();
 
     /**
      * @return

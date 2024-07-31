@@ -7,7 +7,7 @@ import com.aliyuncs.ecs.model.v20140526.DescribeInstancesResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.DefaultProfile;
 import com.github.cloudsec.akskwhoami.service.base.AuthType;
-import com.github.cloudsec.akskwhoami.service.base.OnlineTestJob;
+import com.github.cloudsec.akskwhoami.service.base.job.OnlineTestJob;
 import com.github.cloudsec.akskwhoami.service.base.ServiceProviderTestException;
 import com.github.cloudsec.akskwhoami.service.domain.OnlineTestResult;
 import com.github.cloudsec.akskwhoami.service.domain.TestTask;
@@ -30,7 +30,7 @@ public class AliCloudAkskOnlineTestJob implements OnlineTestJob {
     @Override
     public OnlineTestResult execute(TestTask task) throws ServiceProviderTestException {
 
-        if (!task.hasAkSk()) {
+        if (!task.hasAkAndSk()) {
             return OnlineTestResult.failed(AuthType.AKSK);
         }
 

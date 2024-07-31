@@ -3,6 +3,9 @@ package com.github.cloudsec.akskwhoami.executor.base;
 import com.github.cloudsec.akskwhoami.utils.AkskWhoamiException;
 
 /**
+ *
+ * 执行测试任务时如果发生错误会抛出此异常
+ *
  * @author CC11001100
  */
 public class TestTaskExecuteException extends AkskWhoamiException {

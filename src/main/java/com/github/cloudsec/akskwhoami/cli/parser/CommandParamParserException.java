@@ -3,6 +3,9 @@ package com.github.cloudsec.akskwhoami.cli.parser;
 import com.github.cloudsec.akskwhoami.utils.AkskWhoamiException;
 
 /**
+ *
+ * 命令行参数解析异常
+ *
  * @author CC11001100
  */
 public class CommandParamParserException extends AkskWhoamiException {

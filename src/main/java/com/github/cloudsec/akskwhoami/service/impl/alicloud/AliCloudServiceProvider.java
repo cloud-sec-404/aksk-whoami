@@ -1,7 +1,8 @@
 package com.github.cloudsec.akskwhoami.service.impl.alicloud;
 
 import com.github.cloudsec.akskwhoami.service.base.AbstractServiceProvider;
-import com.github.cloudsec.akskwhoami.service.base.OnlineTestJob;
+import com.github.cloudsec.akskwhoami.service.base.job.OfflineTestJob;
+import com.github.cloudsec.akskwhoami.service.base.job.OnlineTestJob;
 import com.google.common.collect.Lists;
 
 import java.util.List;
@@ -29,6 +30,11 @@ public class AliCloudServiceProvider extends AbstractServiceProvider {
                 new AliCloudAkskOnlineTestJob(),
                 new AliCloudBearerTokenOnlineTestJob()
         );
+    }
+
+    @Override
+    public OfflineTestJob getOfflineTestJob() {
+        return new AliCloudOfflineTestJob();
     }
 
 }

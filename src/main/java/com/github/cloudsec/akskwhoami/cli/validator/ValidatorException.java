@@ -3,6 +3,9 @@ package com.github.cloudsec.akskwhoami.cli.validator;
 import com.github.cloudsec.akskwhoami.utils.AkskWhoamiException;
 
 /**
+ *
+ * 命令行参数错误时会抛出此异常
+ *
  * @author CC11001100
  */
 public class ValidatorException extends AkskWhoamiException {

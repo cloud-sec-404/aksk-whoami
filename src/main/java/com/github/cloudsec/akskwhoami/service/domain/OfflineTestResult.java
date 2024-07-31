@@ -32,6 +32,14 @@ public class OfflineTestResult {
      */
     private Object extra;
 
+    /**
+     *
+     * @return
+     */
+    public static OfflineTestResult failed() {
+        return OfflineTestResult.builder().build();
+    }
+
     public String getAuthType() {
         return authType;
     }

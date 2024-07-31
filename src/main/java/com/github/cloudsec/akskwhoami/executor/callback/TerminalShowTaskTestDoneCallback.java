@@ -10,6 +10,8 @@ import com.github.cloudsec.akskwhoami.service.domain.TestTask;
 /**
  * 把结果输出到控制台上
  *
+ * TODO 2024-08-01 01:08:11 把结果输出做得更容易看懂理解
+ *
  * @author CC11001100
  */
 public class TerminalShowTaskTestDoneCallback extends AbstractTaskTestDoneCallback {

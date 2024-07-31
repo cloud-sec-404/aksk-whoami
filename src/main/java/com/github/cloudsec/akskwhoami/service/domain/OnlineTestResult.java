@@ -1,5 +1,6 @@
 package com.github.cloudsec.akskwhoami.service.domain;
 
+import com.github.cloudsec.akskwhoami.service.base.AuthType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
@@ -71,10 +72,26 @@ public class OnlineTestResult {
     }
 
     /**
+     *
+     * @param extra
+     * @return
+     */
+    public static OnlineTestResult successWithExtra(Object extra) {
+        return OnlineTestResult.builder().isAuthSuccess(true).extra(extra).build();
+    }
+
+    /**
+     * @return
+     */
+    public static OnlineTestResult failedWithDescription(String description) {
+        return failed().setDescription(description);
+    }
+
+    /**
      * @return
      */
     public static OnlineTestResult failed() {
-        return failed(null);
+        return failed(AuthType.AKSK);
     }
 
     /**

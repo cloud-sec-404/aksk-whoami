@@ -18,4 +18,14 @@ public class AuthType {
      */
     public static final String BEARER = "bearer";
 
+    /**
+     * token的方式认证
+     */
+    public static final String TOKEN = "token";
+
+    /**
+     * 公钥、私钥方式
+     */
+    public static final String PUBLIC_PRIVATE_KEY = "public/private key";
+
 }

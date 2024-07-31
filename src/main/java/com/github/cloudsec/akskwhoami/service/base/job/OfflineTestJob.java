@@ -1,5 +1,6 @@
-package com.github.cloudsec.akskwhoami.service.base;
+package com.github.cloudsec.akskwhoami.service.base.job;
 
+import com.github.cloudsec.akskwhoami.service.base.ServiceProviderTestException;
 import com.github.cloudsec.akskwhoami.service.domain.OfflineTestResult;
 import com.github.cloudsec.akskwhoami.service.domain.TestTask;
 

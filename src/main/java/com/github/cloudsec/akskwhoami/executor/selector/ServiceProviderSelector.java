@@ -6,10 +6,11 @@ import com.github.cloudsec.akskwhoami.service.domain.TestTask;
 import java.util.List;
 
 /**
- * 用于选择运行哪些查询器
+ * 用于选择运行哪些服务商来测试任务
  *
  * @author CC11001100
  */
+@FunctionalInterface
 public interface ServiceProviderSelector {
 
     /**

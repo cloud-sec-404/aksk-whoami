@@ -1,9 +1,8 @@
 package com.github.cloudsec.akskwhoami.service.base;
 
-import com.github.cloudsec.akskwhoami.service.domain.OfflineTestResult;
-import com.github.cloudsec.akskwhoami.service.domain.OnlineTestResult;
-import com.github.cloudsec.akskwhoami.service.domain.TestResult;
-import com.github.cloudsec.akskwhoami.service.domain.TestTask;
+import com.github.cloudsec.akskwhoami.service.base.job.OfflineTestJob;
+import com.github.cloudsec.akskwhoami.service.base.job.OnlineTestJob;
+import com.github.cloudsec.akskwhoami.service.domain.*;
 import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.ArrayList;
@@ -47,6 +46,32 @@ public abstract class AbstractServiceProvider implements ServiceProvider {
 
     // -------------------------------------------------------------------------------------------------------------------------------------
 
+    @Override
+    public List<NetworkMode> getSupportNetworkModeList() {
+        List<NetworkMode> l = new ArrayList<>();
+        if (this.isSupportOfflineMode()) {
+            l.add(NetworkMode.OFFLINE);
+        }
+        if (this.isSupportOnlineMode()) {
+            l.add(NetworkMode.ONLINE);
+        }
+        return l;
+    }
+
+    // -------------------------------------------------------------------------------------------------------------------------------------
+
+    /**
+     * 是否支持在线模式检测
+     *
+     * @return
+     */
+    public boolean isSupportOnlineMode() {
+        if (CollectionUtils.isNotEmpty(this.getOnlineTestJobs())) {
+            return true;
+        }
+        return this.getOnlineTestJob() != null;
+    }
+
     /**
      * 如果是一批需要联网的job，则在此处配置
      *
@@ -78,9 +103,14 @@ public abstract class AbstractServiceProvider implements ServiceProvider {
         // 执行一个
         OnlineTestJob job = this.getOnlineTestJob();
         if (job != null) {
-            OnlineTestResult result = job.execute(task);
-            if (result != null) {
-                resultList.add(result);
+            try {
+                OnlineTestResult result = job.execute(task);
+                if (result != null) {
+                    resultList.add(result);
+                }
+            } catch (Exception e) {
+                // ignored error
+                // TODO 2024-07-27 17:33:04 妥善处理异常
             }
         }
 
@@ -88,9 +118,14 @@ public abstract class AbstractServiceProvider implements ServiceProvider {
         List<OnlineTestJob> onlineTestJobs = this.getOnlineTestJobs();
         if (CollectionUtils.isNotEmpty(onlineTestJobs)) {
             for (OnlineTestJob onlineTestJob : onlineTestJobs) {
-                OnlineTestResult result = onlineTestJob.execute(task);
-                if (result != null) {
-                    resultList.add(result);
+                try {
+                    OnlineTestResult result = onlineTestJob.execute(task);
+                    if (result != null) {
+                        resultList.add(result);
+                    }
+                } catch (Exception e) {
+                    // ignored error
+                    // TODO 2024-07-27 17:33:04 妥善处理异常
                 }
             }
         }
@@ -99,6 +134,18 @@ public abstract class AbstractServiceProvider implements ServiceProvider {
     }
 
     // -------------------------------------------------------------------------------------------------------------------------------------
+
+    /**
+     * 是否支持离线模式检测
+     *
+     * @return
+     */
+    public boolean isSupportOfflineMode() {
+        if (CollectionUtils.isNotEmpty(this.getOfflineTestJobs())) {
+            return true;
+        }
+        return this.getOfflineTestJob() != null;
+    }
 
     /**
      * @return
@@ -126,9 +173,14 @@ public abstract class AbstractServiceProvider implements ServiceProvider {
         // 执行一个
         OfflineTestJob job = this.getOfflineTestJob();
         if (job != null) {
-            OfflineTestResult result = job.execute(task);
-            if (result != null) {
-                resultList.add(result);
+            try {
+                OfflineTestResult result = job.execute(task);
+                if (result != null) {
+                    resultList.add(result);
+                }
+            } catch (Exception e) {
+                // ignored error
+                // TODO 2024-07-27 17:33:04 妥善处理异常
             }
         }
 
@@ -136,9 +188,14 @@ public abstract class AbstractServiceProvider implements ServiceProvider {
         List<OfflineTestJob> offlineTestJobs = this.getOfflineTestJobs();
         if (CollectionUtils.isNotEmpty(offlineTestJobs)) {
             for (OfflineTestJob offlineTestJob : offlineTestJobs) {
-                OfflineTestResult result = offlineTestJob.execute(task);
-                if (result != null) {
-                    resultList.add(result);
+                try {
+                    OfflineTestResult result = offlineTestJob.execute(task);
+                    if (result != null) {
+                        resultList.add(result);
+                    }
+                } catch (Exception e) {
+                    // ignored error
+                    // TODO 2024-07-27 17:33:04 妥善处理异常
                 }
             }
         }

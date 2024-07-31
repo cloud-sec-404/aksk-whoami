@@ -19,6 +19,9 @@ public abstract class AbstractTaskTestDoneCallback implements TaskTestDoneCallba
     }
 
     /**
+     *
+     *  测试任务执行成功时的回调方法
+     *
      * @param task
      * @param serviceProvider
      * @param result
@@ -26,6 +29,9 @@ public abstract class AbstractTaskTestDoneCallback implements TaskTestDoneCallba
     public abstract void processExecuteSuccess(TestTask task, ServiceProvider serviceProvider, TestResult result);
 
     /**
+     *
+     * 执行测试任务时发生了异常，会回调此方法
+     *
      * @param task
      * @param serviceProvider
      * @param e
