@@ -139,9 +139,9 @@ public class CommandParamParser {
             if (CollectionUtils.isNotEmpty(supportNetworkModeList)) {
                 msg.append("（");
                 for (int i = 0; i < supportNetworkModeList.size(); i++) {
-                    msg.append(supportNetworkModeList.get(i).toString());
+                    msg.append(supportNetworkModeList.get(i).toString().toLowerCase());
                     if (i != supportNetworkModeList.size() - 1) {
-                        msg.append(", ");
+                        msg.append(",");
                     }
                 }
                 msg.append("）");
