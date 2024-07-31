@@ -37,7 +37,7 @@ public class ConcurrencyTestTaskExecutor implements TestTaskExecutor {
     /**
      * 默认的并发数大一些，看看用户的机器够不够遭不遭得住啊哈哈哈哈
      */
-    public static final int DEFAULT_THREAD_NUM = 1000;
+    public static final int DEFAULT_THREAD_NUM = 1;
 
     /**
      * 默认执行器的超时时间
@@ -118,7 +118,12 @@ public class ConcurrencyTestTaskExecutor implements TestTaskExecutor {
             executorService.awaitTermination(timeoutMils, TimeUnit.MILLISECONDS);
         } catch (InterruptedException e) {
             throw new TestTaskExecuteException(e);
+        } finally {
+            if (!this.disableProgressBar) {
+                this.progressBar.close();
+            }
         }
+        System.out.println("Test done.");
     }
 
 }
