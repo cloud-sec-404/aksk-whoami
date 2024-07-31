@@ -12,7 +12,6 @@ com.github.cloudsec.akskwhoami.service.impl.huaweicloud.HuaWeiCloudServiceProvid
 com.github.cloudsec.akskwhoami.service.impl.jdcloud.JdCloudServiceProvider
 com.github.cloudsec.akskwhoami.service.impl.kingsoftcloud.KingSoftCloudServiceProvider
 com.github.cloudsec.akskwhoami.service.impl.oraclecloud.OracleCloudServiceProvider
-com.github.cloudsec.akskwhoami.service.impl.oucdc.OUCDCServiceProvider
 com.github.cloudsec.akskwhoami.service.impl.qingcloud.QingCloudServiceProvider
 com.github.cloudsec.akskwhoami.service.impl.qiniucloud.QiNiuCloudServiceProvider
 com.github.cloudsec.akskwhoami.service.impl.tencentcloud.TencentCloudServiceProvider
