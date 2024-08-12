@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.github.cloudsec</groupId>
+        <artifactId>aksk-whoami</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>aksk-whoami-service-provider-impl</artifactId>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <aws.version>2.26.27</aws.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.cloudsec</groupId>
+            <artifactId>aksk-whoami-service-provider</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.kohsuke</groupId>
+            <artifactId>github-api</artifactId>
+            <version>1.323</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-core -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>4.7.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-ecs -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-ecs</artifactId>
+            <version>5.11.7</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.tencentcloudapi/tencentcloud-sdk-java -->
+        <dependency>
+            <groupId>com.tencentcloudapi</groupId>
+            <artifactId>tencentcloud-sdk-java</artifactId>
+            <version>4.0.11</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.tencentcloudapi/tencentcloud-sdk-java-cvm -->
+        <dependency>
+            <groupId>com.tencentcloudapi</groupId>
+            <artifactId>tencentcloud-sdk-java-cvm</artifactId>
+            <version>3.1.1065</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.qiniu/qiniu-java-sdk -->
+        <dependency>
+            <groupId>com.qiniu</groupId>
+            <artifactId>qiniu-java-sdk</artifactId>
+            <version>7.15.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/cn.ucloud/ucloud-sdk-java-common -->
+        <dependency>
+            <groupId>cn.ucloud</groupId>
+            <artifactId>ucloud-sdk-java-common</artifactId>
+            <version>1.2.26-release</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk -->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk</artifactId>
+            <version>1.12.764</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/com.google.cloud/google-cloud-core -->
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-core</artifactId>
+            <version>2.40.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.cloud/google-cloud-storage -->
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-storage</artifactId>
+            <version>2.40.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.huaweicloud.sdk/huaweicloud-sdk-all -->
+        <dependency>
+            <groupId>com.huaweicloud.sdk</groupId>
+            <artifactId>huaweicloud-sdk-all</artifactId>
+            <version>3.1.107</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.azure/azure-sdk-all -->
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-sdk-all</artifactId>
+            <version>1.0.0</version>
+            <type>pom</type>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.baidubce/bce-java-sdk -->
+        <dependency>
+            <groupId>com.baidubce</groupId>
+            <artifactId>bce-java-sdk</artifactId>
+            <version>0.10.331</version>
+        </dependency>
+
+        <!--        <dependency>-->
+        <!--            <groupId>com.volcengine</groupId>-->
+        <!--            <artifactId>volcengine-java-sdk-bom</artifactId>-->
+        <!--            <version>1.0.75</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.volcengine</groupId>-->
+        <!--            <artifactId>volcengine-java-sdk-vpc</artifactId>-->
+        <!--            <version>0.1.122</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.volcengine</groupId>-->
+        <!--            <artifactId>volcengine-java-sdk-ecs</artifactId>-->
+        <!--            <version>0.1.122</version>-->
+        <!--        </dependency>-->
+
+        <dependency>
+            <groupId>cn.ucloud</groupId>
+            <artifactId>ucloud-sdk-java-udisk</artifactId>
+            <version>1.1.0-release</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-core</artifactId>
+            <version>1.11.24</version>
+        </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-s3</artifactId>
+            <version>1.11.24</version>
+        </dependency>
+
+        <!--   AWS的SDK依赖      -->
+        <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/bom -->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>bom</artifactId>
+            <version>${aws.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/s3 -->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>s3</artifactId>
+            <version>${aws.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/sts -->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>sts</artifactId>
+            <version>${aws.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.twitter</groupId>
+            <artifactId>twitter-api-java-sdk</artifactId>
+            <version>2.0.3</version>
+        </dependency>
+
+        <!-- 对应产品线的SDK -->
+        <dependency>
+            <groupId>com.jdcloud.sdk</groupId>
+            <artifactId>vm</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ksyun</groupId>
+            <artifactId>ks3-kss-java-sdk</artifactId>
+            <version>1.0.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.yunify</groupId>
+            <artifactId>qingstor.sdk.java</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+
+        <!--        <dependency>-->
+        <!--            <groupId>com.oracle.oci.sdk</groupId>-->
+        <!--            <artifactId>oci-java-sdk</artifactId>-->
+        <!--            <version>3.45.0</version>-->
+        <!--        </dependency>-->
+    </dependencies>
+
+</project>

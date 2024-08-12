@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.github.cloudsec.akskwhoamigui.HelloController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+  </padding>
+
+  <Label fx:id="welcomeText"/>
+
+  <!-- ListView代替原来的Button，可以根据需要添加更多的列表项 -->
+  <ListView fx:id="listView" VBox.vgrow="ALWAYS">
+    <!-- 列表项的示例，实际使用时需要根据具体需求添加 -->
+    <placeholder>
+      <Label text="Example Item"/>
+    </placeholder>
+  </ListView>
+</VBox>
