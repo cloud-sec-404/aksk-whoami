@@ -1,7 +1,6 @@
 package com.github.cloudsec.akskwhoami.utils;
 
 /**
- *
  * 此工具中所有的异常都要继承此异常
  *
  * @author CC11001100
